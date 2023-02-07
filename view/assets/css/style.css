@@ -1,0 +1,292 @@
+/* CSS Document */
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir.eot');
+    src: local('../fonts/Vazir'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype'), url('../fonts/Vazir.svg') format('svg');
+}
+
+* {
+    font-family: "Vazir";
+}
+
+
+
+/* Error Page */
+.error .clip .shadow {
+    height: 180px;
+    /*Contrall*/
+}
+
+.error .clip:nth-of-type(2) .shadow {
+    width: 130px;
+    /*Contrall play with javascript*/
+}
+
+.error .clip:nth-of-type(1) .shadow,
+.error .clip:nth-of-type(3) .shadow {
+    width: 250px;
+    /*Contrall*/
+}
+
+.error .digit {
+    width: 150px;
+    /*Contrall*/
+    height: 150px;
+    /*Contrall*/
+    line-height: 150px;
+    /*Contrall*/
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.error h2
+
+/*Contrall*/
+    {
+    font-size: 32px;
+}
+
+.error .container-error-404 {
+    margin-top: 10%;
+    position: relative;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.error .container-error-404 .clip {
+    display: inline-block;
+    transform: skew(-45deg);
+}
+
+.error .clip .shadow {
+
+    overflow: hidden;
+}
+
+.error .clip:nth-of-type(2) .shadow {
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 20px 0px 20px -15px rgba(150, 150, 150, 0.8), 20px 0px 20px -15px rgba(150, 150, 150, 0.8);
+}
+
+.error .clip:nth-of-type(3) .shadow:after,
+.error .clip:nth-of-type(1) .shadow:after {
+    content: "";
+    position: absolute;
+    left: -8px;
+    bottom: 0px;
+    z-index: 9999;
+    height: 100%;
+    width: 10px;
+    background: linear-gradient(90deg, transparent, rgba(173, 173, 173, 0.8), transparent);
+    border-radius: 50%;
+}
+
+.error .clip:nth-of-type(3) .shadow:after {
+    right: -8px;
+}
+
+
+
+.error .digit {
+    position: relative;
+    top: 8%;
+    color: white;
+    background: rgb(204, 195, 68);
+    border-radius: 50%;
+    display: inline-block;
+    transform: skew(45deg);
+}
+
+.error .clip:nth-of-type(2) .digit {
+    right: -10%;
+}
+
+.error .clip:nth-of-type(1) .digit {
+    left: -20%;
+}
+
+.error .clip:nth-of-type(3) .digit {
+    right: -20%;
+}
+
+.error h2 {
+    color: #A2A2A2;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+/* Error Page */
+@media (max-width: 767px) {
+
+    /* Error Page */
+    .error .clip .shadow {
+        height: 100px;
+        /*Contrall*/
+    }
+
+    .error .clip:nth-of-type(2) .shadow {
+        width: 80px;
+        /*Contrall play with javascript*/
+    }
+
+    .error .clip:nth-of-type(1) .shadow,
+    .error .clip:nth-of-type(3) .shadow {
+        width: 100px;
+        /*Contrall*/
+    }
+
+    .error .digit {
+        width: 80px;
+        /*Contrall*/
+        height: 80px;
+        /*Contrall*/
+        line-height: 80px;
+        /*Contrall*/
+        font-size: 52px;
+    }
+
+    .error h2
+
+    /*Contrall*/
+        {
+        font-size: 24px;
+    }
+
+    /*--------------------------------------------Framework --------------------------------*/
+
+    .overlay {
+        position: relative;
+        z-index: 20;
+    }
+
+    /*done*/
+    .item-bg-color {
+        background: #EAEAEA
+    }
+
+    /*done*/
+
+    /* Padding Section*/
+    .padding-top {
+        padding-top: 10px;
+    }
+
+    /*done*/
+    .padding-bottom {
+        padding-bottom: 10px;
+    }
+
+    /*done*/
+    .padding-vertical {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .padding-horizontal {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .padding-all {
+        padding: 10px;
+    }
+
+    /*done*/
+
+    .no-padding-right {
+        padding-right: 0px;
+    }
+
+    /*done*/
+    .no-padding-left {
+        padding-left: 0px;
+    }
+
+    /*done*/
+    .no-vertical-padding {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .no-horizontal-padding {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .no-padding {
+        padding: 0px;
+    }
+
+    /*done*/
+    /* Padding Section*/
+
+    /* Margin section */
+    .margin-top {
+        margin-top: 10px;
+    }
+
+    /*done*/
+    .margin-bottom {
+        margin-bottom: 10px;
+    }
+
+    /*done*/
+    .margin-left {
+        margin-left: 10px;
+    }
+
+    /*done*/
+    .margin-right {
+        margin-right: 10px;
+    }
+
+    /*done*/
+    .margin-horizontal {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    /*done*/
+    .margin-vertical {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /*done*/
+    .margin-all {
+        margin: 10px;
+    }
+
+    /*done*/
+    .no-margin {
+        margin: 0px;
+    }
+
+    /*done*/
+
+    .no-vertical-margin {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .no-horizontal-margin {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .inside-col-shrink {
+        margin: 0px 20px;
+    }
+
+    /*done - For the inside sections that has also Title section*/
+    /* Margin section */
+
+    hr {
+        margin: 0px;
+        padding: 0px;
+        border-top: 1px dashed #999;
+    }
+}
