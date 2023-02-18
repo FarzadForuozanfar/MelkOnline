@@ -1,31 +1,19 @@
 <section class="p-0 m-0 mt-5">
     <div class="container">
         <div class="row flex-lg-row-reverse">
-            <div class="col-lg-7 col-12">
-                <div class="connected-carousels">
-                    <div class="stage">
-                        <div class="carousel carousel-stage">
-                            <ul>
-                                <?php foreach ($images as $image) : ?>
-                                    <li class="">
-                                        <div class="p-0 m-0 w-100">
-                                        <img src="<?php echo $image['url']; ?>" width="600px" height="400px" class="img-carousel-lg" alt="">
-                                        <img src="<?php echo $image['url']; ?>" width="400px" height="400px" class="img-carousel-md" alt="">
-                                        <img src="<?php echo $image['url']; ?>" width="320px" height="400px" class="img-carousel-sm" alt="">
-                                        </div>
-                                    </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
+            <div class="col-lg-6 col-12">
+                <div id="add-carousel" class="owl-carousel owl-theme text-light">
 
-                        <a href="#" class="prev prev-stage"><span>&rsaquo;</span></a>
-                        <a href="#" class="next next-stage"><span>&lsaquo;</span></a>
+                <?php foreach ($images as $image) : ?>
+                    <div class="swiper-slide">
+                        <img src="<?php echo $image['url']; ?>" width="600px" height="400px" class="img-carousel-lg" alt="">
                     </div>
-
-
+                <?php endforeach; ?>
                 </div>
             </div>
-            <div class="col-lg-5 col-12">
+            <div class="col-lg-1 col-12">
+            </div>
+            <div class="col-lg-5 mt-lg-0 mt-5 col-12">
                 <h4 class="text-light">
                     <?php echo $house['h_title']; ?>
                 </h4>

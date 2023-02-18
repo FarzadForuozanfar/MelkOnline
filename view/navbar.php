@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg bg-dark-gray shadow-lg ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img width="50px" width="55px" src="view/assets/images/logo.jpg" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" id="toggleNav" type="button" >
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

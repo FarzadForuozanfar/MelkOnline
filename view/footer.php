@@ -131,6 +131,29 @@
             }
         }
     })
+    $('#add-carousel').owlCarousel({
+        loop: true,
+        autoplayHoverPause: true,
+        margin: 10,
+        center:true,
+        autoplay: false,
+        nav:true,
+        lazyLoad:true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 1,
+                nav: true
+            },
+            1000: {
+                items: 1,
+                nav: true
+            }
+        }
+    })
     AOS.init();
     <?php if (isset($house)) :?>
         let h_title = " اشتراک گذاری آگهی "

@@ -67,6 +67,9 @@ function number_format(number, decimals, decPoint, thousandsSep) {
     }
     return s.join(dec)
 }
+$("#toggleNav").click(function() {
+    $("#navbarSupportedContent").slideToggle( "slow" );
+});
 const info_json = [
     {
         "head-header": "خرید ملک در مشهد",
