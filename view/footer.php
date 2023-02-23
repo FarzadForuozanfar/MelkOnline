@@ -73,7 +73,7 @@
         <div style="background-color: black; color: white" class="col-12 p-4  text-center">
             <h6>کلیه حقوق این وبسایت محفوظ است</h6>
             <span>
-                Copyright (c) 2022
+                Copyright (c) <?= date("Y"); ?>
             </span>
         </div>
     </footer>
