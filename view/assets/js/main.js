@@ -183,7 +183,6 @@ function DarkLightMode(mode = null) {
         }
     }
     else if (mode == 'dark') {
-        console.log(mode, 1);
         $("body").removeClass('bg-light').addClass("bg-dark");
         $(".light-scroll").removeClass("light-scroll").addClass("dark-scroll");
         $(".btn-dark-mode").removeClass().addClass("btn-light-mode");
@@ -195,7 +194,6 @@ function DarkLightMode(mode = null) {
         $(".btn-outline-dark").removeClass("btn-outline-dark").addClass("btn-outline-light");
     }
     else if (mode == 'light') {
-        console.log(mode, 2);
         $("body").removeClass("bg-dark").addClass("bg-light");
         $(".btn-light-mode").removeClass().addClass("btn-dark-mode");
         $(".dark-scroll").removeClass("dark-scroll").addClass("light-scroll");
@@ -518,7 +516,7 @@ function bookmarkProcces(house_id) {
             }
         }).catch(error => console.log(error))
 }
-$("#myInput").change(function () {
+$("#myInput").on('input', function () {
     if ($(this).val()) {
         $($("#search-btn")).prop('disabled', false);
     }

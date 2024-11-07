@@ -11,6 +11,7 @@
         "contact-us" => "<title> ارتباط با ما | املاک آنلاین </title>",
         "profile" => "<title> صفحه پروفایل شما | املاک آنلاین </title>",
         "houses"=>"<title> خرید رهن اجاره آپارتمان خانه ویلایی و تجاری و اداری | املاک آنلاین</title>",
+        "register" => "<title> املاک آنلاین | ثبت نام </title>"
     );
     $_SESSION['titels'] = $titles;
     date_default_timezone_set("Asia/Tehran");
@@ -55,10 +56,6 @@
 
         case("/MelkOnline/GetRegion"):
             require __DIR__."/controller/postRegion.php";
-            break;
-
-        case("/MelkOnline/register"):
-            require __DIR__."/controller/sign_up.php";
             break;
         case("/MelkOnline/logOut"):
             require __DIR__."/controller/logout.php";
@@ -106,7 +103,15 @@
         case("/MelkOnline/searchHouse"):
             require __DIR__."/controller/searchHouse.php";
             break; 
-            
+        case("/MelkOnline/register"):
+            if ($_SERVER['REQUEST_METHOD'] == 'GET')
+                require __DIR__."/controller/show_register_form.php";
+            else
+                require __DIR__."/controller/register.php";
+            break;
+        case("/MelkOnline/send-report"):
+            require __DIR__."/controller/handle_report.php";
+            break; 
         default:
             require __DIR__."/controller/404.php";
             break;

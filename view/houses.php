@@ -140,8 +140,8 @@
     <?php elseif (!isset($notFound)) : ?>
 
         <section class="p-0 m-0 mt-3">
-            <div class="container">
-                <div class="row" id="house-container">
+            <div class="container-fluid">
+                <div class="row px-lg-5" id="house-container">
                     <?php foreach ($houses as $house) : ?>
                         <div class="col-lg-6 col-12 mt-4 pe-3">
                             <div class="w-100 d-flex">

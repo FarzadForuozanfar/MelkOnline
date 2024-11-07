@@ -21,7 +21,7 @@ if($_POST['email-phone'] && $_POST['password'])
     {
         $exist = $db->query("SELECT * FROM users WHERE `email` = '$email' AND `password` = '$password'");
     }
-    echo $exist->num_rows ;
+    
     if($exist->num_rows > 0)
     {
         $user = $exist->fetch_assoc();

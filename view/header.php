@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Vendor assets -->
-    <?php if (!(isset($_SESSION['house-title']))) : ?>
+    <?php if (!(isset($_SESSION['house-title']))): ?>
         <?php echo ($_SESSION["titels"][$_SESSION["location"]]); ?>
-    <?php else : ?>
+    <?php else: ?>
         <?php echo ($_SESSION["house-title"]); ?>
     <?php endif; ?>
-    <?php if ($_SESSION['location'] == "404") : ?>
+    <?php if ($_SESSION['location'] == "404"): ?>
         <link rel="stylesheet" type="text/css" href="view/assets/css/style.css">
     <?php endif; ?>
     <link href="view/assets/vendor/animate.css/animate.css" rel="stylesheet">
@@ -30,10 +30,24 @@
     <link rel="stylesheet" type="text/css" href="view/assets/css/main.css">
     <link rel="stylesheet" href="view/assets/css/owl.carousel.css">
     <link rel="stylesheet" href="view/assets/css/owl.theme.default.css">
+    <script src="view/assets/vendor/sweetalert/main.js"></script>
+    <!-- <link rel="stylesheet" href="view/assets/vendor/sweetalert/main.css"> -->
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+    </script>
 </head>
 
 <body class="bg-dark dark-scroll">
     <?php
     include "view/sign_in_modal.php";
-    include "view/sign_up_modal.php";
     ?>

@@ -2,14 +2,14 @@
     <nav style="font-size:small;">
         <ul class="nav justify-content-end align-items-center align-self-center p-1">
             <li class="nav-item">
-                <button onclick="DarkLightMode()" class="btn-light-mode"><i class="fa-solid fa-sun"><input type="hidden" value="dark" name="mode"></i></button>
+                <button onclick="DarkLightMode()" class="btn-light-mode"><i style="margin-top: 7.5px !important;" class="fa-solid fa-sun DarkLightMode()"><input type="hidden" value="dark" name="mode"></i></button>
             </li>
             <?php if (!isset($_SESSION['user-login'])) : ?>
                 <li class="nav-item">
-                    <span class="nav-link txt-light cursor-pointer" onclick="document.getElementById('sign-up-modal').style.display='block'"><i class="fa fa-user-large me-2"></i>عضویت </span>
+                    <a href="register" class="nav-link txt-light cursor-pointer"><i class="fa fa-user-large me-2"></i>عضویت </a>
                 </li>
                 <li class="nav-item">
-                    <span class="nav-link txt-light cursor-pointer" onclick="document.getElementById('sign-in-modal').style.display='block'"><i class="fa-solid fa-lock me-2"></i>ورود</span>
+                    <a class="nav-link txt-light cursor-pointer" onclick="document.getElementById('sign-in-modal').style.display='block'"><i class="fa-solid fa-lock me-2"></i>ورود</a>
                 </li>
             <?php else : ?>
                 <li class="nav-item align-items-center align-self-center">
@@ -35,7 +35,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link txt-light mx-1" href="<?php if($_SESSION['location'] != "index")
-                            echo 'index#NewestHouse'; else echo '#NewestHouse'?>"><i class="fa-solid fa-building"></i> آگهی ها </a>
+                            echo 'houses'; else echo '#NewestHouse'?>"><i class="fa-solid fa-building"></i> آگهی ها </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link txt-light mx-1" href="<?php if($_SESSION['location'] != "index")
@@ -56,7 +56,7 @@
                     <div class="autocomplete w-100 px-2">
                         <input name="regions" id="myInput" class="form-control me-2 rounded-4" type="search" placeholder="جستجوی منطقه محله . . ." aria-label="Search">
                     </div>
-                    <button disabled id="search-btn" class="btn btn-outline-gold rounded-5" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button disabled style=" position: relative; width: 42px !important; height: 40px !important; border-radius: 50%;" id="search-btn" class="btn btn-outline-gold rounded-5" type="submit"><i style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
         </div>

@@ -37,10 +37,11 @@
         {   
             $location = $_SESSION['houseLocation'];
         }
+        elseif($_SESSION['location'] == 'register' && isset($_SESSION['error']))
+        {
+            $location = "Location:register";
+        }
         else
             $location = "Location:index";
-            
         header($location);
     }
-    
-?>
