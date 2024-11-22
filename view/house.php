@@ -69,7 +69,8 @@
                     </div>
                     <div class="col justify-content-end d-flex align-items-center align-self-center">
                         <input type="text" class="d-none" value="<?php echo $house['call_number'] ?>" id="call-namber">
-                        <span class="text-gold me-1"><?php echo $house['call_number'] ?></span>
+                        <a href="tel:+"></a>
+                        <a href="tel:<?= add98Number($house['call_number']); ?>" class="text-gold me-1"><?php echo $house['call_number'] ?></a>
                         <div class="tooltips">
                             <button style="background-color: none; border:none;" class="kt-btn" onclick="myFunction()"
                                 onmouseout="outFunc()">

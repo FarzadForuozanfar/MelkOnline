@@ -28,3 +28,12 @@ function getReservedPrice($price)
     $result = $result > 1000000 ? 1000000 : $result;
     return $result;
 }
+
+function add98Number($number)
+{
+    if (substr($number, 0, 2) == '09') {
+        return '98' . substr($number, 1);
+    } elseif (substr($number, 0, 2) == '98') {
+        return $number;
+    }
+}
