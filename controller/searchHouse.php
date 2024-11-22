@@ -50,11 +50,12 @@ if (isset($_POST)) {
     LEFT join house_images hi on hi.house_id = h.id
     LEFT JOIN ad_types a_t ON h.ad_type_id =a_t.id 
     LEFT JOIN regions r ON r.id = h.region_id
-    WHERE $region AND $ad_type AND $metrage AND $category
+    WHERE $region AND $ad_type AND $metrage AND $category AND `Status` = 'Accept'
     GROUP by h.id
     $sort_value";
 
     $records = $db->query($query);
+    $result = [];
     if($records->num_rows > 0)
         {
             $result['status'] = array("status" => "success");

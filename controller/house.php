@@ -3,12 +3,13 @@
     {
         $house_id = $_GET['id'];
         include "model/database.php";
+        $status = !isset($_SESSION['admin']) ? "AND `Status` = 'Accept'" : '';
         $house = $db->query("SELECT *,h.id AS h_id, h.title AS h_title, r.title AS r_title, a_t.title AS ad_title,c.title AS cat_title FROM houses h 
         LEFT JOIN regions r on r.id = h.region_id
         LEFT JOIN ad_types a_t ON a_t.id = h.ad_type_id
         LEFT JOIN categories c ON c.id = h.category_id 
-        WHERE h.id = $house_id")->fetch_assoc();
-        if($house['id']){
+        WHERE h.id = $house_id $status")->fetch_assoc();
+        if(isset($house['id'])){
             $options_str = $house['options'];
             $options_str = explode(",",$options_str);
             $options = [];

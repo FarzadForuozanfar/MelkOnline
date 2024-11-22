@@ -15,7 +15,7 @@
         LEFT join house_images hi on hi.house_id = h.id
         LEFT JOIN ad_types a_t ON h.ad_type_id =a_t.id 
         LEFT JOIN regions r ON r.id = h.region_id
-        WHERE r.title = '$region_title' AND r.id = $region_id
+        WHERE r.title = '$region_title' AND r.id = $region_id AND `Status` = 'Accept'
         GROUP by h.id
         ORDER BY h.created_at DESC 
         ");
@@ -25,6 +25,7 @@
     LEFT join house_images hi on hi.house_id = h.id
     LEFT JOIN ad_types a_t ON h.ad_type_id =a_t.id 
     LEFT JOIN regions r ON r.id = h.region_id
+    WHERE `Status` = 'Accept'
     GROUP by h.id
     ORDER BY h.created_at DESC 
     ");}
