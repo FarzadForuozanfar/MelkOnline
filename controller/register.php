@@ -29,6 +29,7 @@ if(!empty($_POST['full-name']) && !empty($_POST['email']) && !empty($_POST['phon
             else
             {
                 $_SESSION['user-login'] = $db->query("SELECT * FROM users WHERE id = {$db->insert_id};")->fetch_assoc();
+                $_SESSION['notif']      = "کاربر عزیز به سایت ملک آنلاین خوش آمدید.";
             }
         }
 

@@ -441,3 +441,4 @@
     <!-- end magazine -->
     
     <!-- footer -->
+    <script src="view/assets/js/text-plugin.js"></script>

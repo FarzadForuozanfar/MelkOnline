@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                         </header>
-                        <iframe width="95%" height="270" loading="lazy" allowfullscreen src="https://map.ir/lat/36.3238301/lng/59.5586102/z/17/p/%D9%85%D8%A7%20%D8%A7%DB%8C%D9%86%D8%AC%D8%A7%DB%8C%DB%8C%D9%85 " frameborder="1"></iframe>
+                        <iframe loading="lazy" src="https://balad.ir/embed?p=1V27gb9hxuSRwq" title="مشاهده «شرکت ملک آنلاین» روی نقشه بلد" width="100%" height="280" frameborder="1" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,6 @@
 
 <script src="view/assets/js/jquery.js"></script>
 <?php if ($_SESSION['location'] == "index") : ?>
-    <script src="view/assets/js/text-plugin.js"></script>
     <script src="view/assets/js/validation.js"></script>
 <?php endif; ?>
 <script src="view/assets/js/modal.js"></script>
@@ -101,6 +100,9 @@
 <?php endif; ?>
 <script src="view/assets/js/main.js"></script>
 <script>
+    function changeflex() {
+        document.querySelector('#nav-1').classList.replace('justify-content-between', 'justify-content-end')
+    }
     $(document).ready(function () {
         let cookies = document.cookie.split(';');
         //console.log(cookies[0].includes('mode'))
@@ -175,7 +177,7 @@
             }
             });
         }
-    <?php endif; unset($house) ?>
+    <?php endif; unset($house, $_SESSION['notif']) ?>
 </script>
 </body>
 

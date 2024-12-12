@@ -10,7 +10,7 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <?php if (!isset($_SESSION['admin']) && isset($_SESSION['user-login'])): ?>
+                <?php if (!isset($_SESSION['admin']) && isset($_SESSION['user-login']) && $_SESSION['user-login']['id'] != $house['user_id']): ?>
                     <div data-bs-toggle="modal" data-bs-target="#reserve-modal" style="cursor: pointer;"
                         class="row justify-content-between mt-4 text-white border-top border-bottom py-3">
                         <div class="d-flex align-items-center col">
@@ -69,7 +69,6 @@
                     </div>
                     <div class="col justify-content-end d-flex align-items-center align-self-center">
                         <input type="text" class="d-none" value="<?php echo $house['call_number'] ?>" id="call-namber">
-                        <a href="tel:+"></a>
                         <a href="tel:<?= add98Number($house['call_number']); ?>" class="text-gold me-1"><?php echo $house['call_number'] ?></a>
                         <div class="tooltips">
                             <button style="background-color: none; border:none;" class="kt-btn" onclick="myFunction()"
@@ -87,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <?php if (!isset($_SESSION['admin'])): ?>
+                <?php if (!isset($_SESSION['admin']) && $_SESSION['user-login']['id'] != $house['user_id']): ?>
                     <div data-bs-toggle="modal" data-bs-target="#report-modal" style="cursor: pointer;"
                         class="row justify-content-between mt-4 text-white border-top border-bottom py-3">
                         <div class="d-flex align-items-center col">
@@ -206,7 +205,7 @@
         </div>
     </div>
 </div>
-<?php if (isset($_SESSION['user-login'])): ?>
+<?php if (isset($_SESSION['user-login']) && $_SESSION['user-login']['id'] != $house['user_id']): ?>
     <div id="reserve-modal" class="modal" tabindex="-1">
         <div class="modal-dialog modal-dialog-scrollable modal-lg">
             <div class="modal-content">
@@ -247,8 +246,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
-                    <button type="button" id="send-report-btn" onclick="sendReport(<?= $house['h_id']; ?>)"
-                        class="btn btn-primary">پرداخت</button>
+                    <a href="sendtobank?id=<?= $house['h_id']; ?>"
+                        class="btn btn-primary">پرداخت</a>
                 </div>
             </div>
         </div>

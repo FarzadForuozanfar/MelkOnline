@@ -11,8 +11,7 @@ body {
     overflow-x: hidden;
 }
 
-* {
-    /* box-sizing: border-box; */
+:is(*:not(i)) {
     font-family: iran;
 }
 
@@ -674,15 +673,15 @@ input[type=text] {
 }
 
 .ul-profile-side-bar .active {
+    background-color: whitesmoke;
     border-right: 8px solid gold;
+    color: var(--bs-gold) !important;
     padding-right: 0px !important;
+
 }
 
 .ul-profile-side-bar .contant:hover {
-    background-color: whitesmoke;
-    border-right: 8px solid gold;
-    color: var(--bs-gold);
-    padding-right: 0px !important;
+    background-color: rgb(255, 233, 177);
 
 }
 
@@ -690,7 +689,11 @@ input[type=text] {
     color: #999;
 }
 
-.ul-profile-side-bar div div a:hover {
+.ul-profile-side-bar .active a {
+    color: var(--bs-gold);
+}
+
+.ul-profile-side-bar  div div a:hover {
     color: var(--bs-gold);
 }
 
@@ -705,7 +708,6 @@ input[type=text] {
 
     backdrop-filter: blur(25px) saturate(108%);
     -webkit-backdrop-filter: blur(25px) saturate(108%);
-    background-color: rgba(255, 255, 255, 0.38);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     border-radius: 8px;

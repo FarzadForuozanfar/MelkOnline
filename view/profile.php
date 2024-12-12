@@ -12,6 +12,16 @@
 
                         elseif($_SESSION['sub-location'] == "bookmarks")
                             include "view/bookmarks.php";
+
+                        elseif($_SESSION['sub-location'] == "reserved")
+                            include "view/reserved.php";
+
+                        elseif($_SESSION['sub-location'] == "factors")
+                            include "view/factors.php";
+
+                        elseif($_SESSION['sub-location'] == "myads")
+                            include "view/myads.php";
+
                         else
                             include "view/changePassword.php";
                     ?>

@@ -26,6 +26,7 @@ if($_POST['email-phone'] && $_POST['password'])
     {
         $user = $exist->fetch_assoc();
         $_SESSION["user-login"] = $user;
+        $_SESSION['notif'] = "کاربر {$user['name']} خوش آمدید.";
     }
     else
     {

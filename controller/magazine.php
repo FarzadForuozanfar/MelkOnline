@@ -11,7 +11,7 @@
         $id = $_GET['id'];
         $article = $db->query("SELECT * FROM articles WHERE id = $id")->fetch_assoc();
         $articles = $db->query("SELECT * FROM articles WHERE NOT id = $id ORDER BY created_at DESC LIMIT 4");
-        $comments = $db->query("SELECT * , users.id AS id_user FROM comments INNER JOIN users ON comments.user_id = users.id WHERE mag_id = $id ORDER BY created_at DESC");
+        $comments = $db->query("SELECT * , users.id AS id_user FROM comments LEFt JOIN users ON comments.user_id = users.id WHERE mag_id = $id ORDER BY comments.created_at DESC");
     }
     else{
         $articles = $db->query("SELECT * FROM articles ORDER BY created_at DESC");

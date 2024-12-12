@@ -1,4 +1,6 @@
 <?php 
+require_once "./lib/jdf.php";
+
 
 function getPersianAdsStatus($status) {
     $Statuses = [
@@ -36,4 +38,19 @@ function add98Number($number)
     } elseif (substr($number, 0, 2) == '98') {
         return $number;
     }
+}
+
+
+function miladi2jalali(string $dateTime, string $dateTimeSep = ' ')
+{
+    if ($dateTime == '') return '-';
+
+    [$date, $time] = explode($dateTimeSep, $dateTime);
+    $dateTimeStamp = strtotime($date);
+    $day           = date('d',$dateTimeStamp);
+    $month         = date('m',$dateTimeStamp);
+    $year          = date('Y',$dateTimeStamp);
+    $jalali        = gregorian_to_jalali($year,$month,$day );
+
+    return implode('/', $jalali) . " $time ";
 }

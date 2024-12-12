@@ -1,5 +1,12 @@
 <?php
-    session_start();
+    error_reporting(E_ERROR | E_WARNING | E_PARSE);
+    ini_set('display_errors', 'On');
+
+    date_default_timezone_set("Asia/Tehran");
+    if(session_status() === PHP_SESSION_NONE) session_start();
+    
+    require_once "utility/base.php";
+    
     if (!isset($_COOKIE['mode']))
     {
         setcookie("mode", "dark");
@@ -11,22 +18,17 @@
         "contact-us" => "<title> ارتباط با ما | املاک آنلاین </title>",
         "profile" => "<title> صفحه پروفایل شما | املاک آنلاین </title>",
         "houses"=>"<title> خرید رهن اجاره آپارتمان خانه ویلایی و تجاری و اداری | املاک آنلاین</title>",
-        "register" => "<title> املاک آنلاین | ثبت نام </title>"
+        "register" => "<title> املاک آنلاین | ثبت نام </title>",
+        "factor" => "<title> املاک آنلاین | پرداخت رزور </title>"
+
     );
+
     $_SESSION['titels'] = $titles;
-    date_default_timezone_set("Asia/Tehran");
+    $request            = $_SERVER["REQUEST_URI"];
+    $id                 = $_GET['id'] ?? '';
+    $factor             = $_GET['factor'] ?? '';
+    $status             = $_GET['status'] ?? '';
 
-    $request = $_SERVER["REQUEST_URI"];
-    if(!empty($_GET['id']))
-    {
-        $id = $_GET['id'];
-    }
-    else
-    {
-        $id = '';
-    }
-
-    require_once "utility/base.php";
     
     switch ($request) {
         case("/MelkOnline"):
@@ -64,14 +66,11 @@
             break;
 
         case("/MelkOnline/personalInfo"):
-            require __DIR__."/controller/profile.php";
-            break;
-
         case("/MelkOnline/bookmarks"):
-            require __DIR__."/controller/profile.php";
-            break;
-
         case("/MelkOnline/changePass"):
+        case("/MelkOnline/reserved"):
+        case("/MelkOnline/factors"):
+        case("/MelkOnline/myads"):    
             require __DIR__."/controller/profile.php";
             break;
         
@@ -114,6 +113,22 @@
         case("/MelkOnline/send-report"):
             require __DIR__."/controller/handle_report.php";
             break; 
+        case("/MelkOnline/sendtobank?id=$id"):
+            require __DIR__."/controller/send_to_bank.php";
+            break; 
+        case("/MelkOnline/payment?status=$status&factor=$factor"):
+            require __DIR__."/controller/handle_payment.php";
+            break; 
+        case ("/MelkOnline/create-ad"):
+            $_SESSION["location"] = "index";
+            if (!isset($_SESSION['user-login'])) return header("Location: /MelkOnline");
+            require __DIR__."/controller/show_create_ad_form.php";
+            break;
+        case ("/MelkOnline/CreateAd"):
+            $_SESSION["location"] = "index";
+            if (!isset($_SESSION['user-login'])) return header("Location: /MelkOnline");
+            require __DIR__."/controller/handle_create_ad.php";
+            break;
         default:
             require __DIR__."/controller/404.php";
             break;

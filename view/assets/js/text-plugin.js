@@ -42,5 +42,6 @@ var wordflick = function () {
 };
 
 $(document).ready(function () {
-  wordflick();
+  if (document.getElementsByClassName('word'))
+    wordflick();
 });

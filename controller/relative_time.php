@@ -1,7 +1,6 @@
 <?php
 function time2str($ts)
 {
-    date_default_timezone_set("Asia/Tehran");
     if(!ctype_digit($ts))
         $ts = strtotime($ts);
 

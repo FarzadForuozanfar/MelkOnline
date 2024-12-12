@@ -13,15 +13,15 @@
             <div class="col-lg-6 col-md-6 col-12 p-1">
                 <div class="bg-dark-gray rounded-4 p-3 align-content-stretch flex-wrap align-items-center align-self-center d-flex h-100">
                     <div class="row text-center">
-                        <h1 class="fa-solid fa-house text-gold"></h1>
+                        <i class="fa-solid fa-house text-gold fs-1"></i>
                         <h5 class="text-light mt-3">حضوری در خدمت باشیم</h5>
                         <h6 class="text-gold mt-3">خراسان رضوی , مشهد , بلوار فردوسی , فردوسی 15 , میلاد 20 , ساختمان نگین شرق</h6>
                         <hr>
                     </div>
                     <div class="w-100 row ms-1 text-center align-items-center align-self-center justify-content-center">
-                        <h1 class="fa-solid fa-envelope text-gold"></h1>
+                        <i class="fa-solid fa-envelope text-gold fs-1"></i>
                         <h5 class="text-light mt-3">ایمیل هم بزنید عالی است</h5>
-                        <h6 class="text-gold mt-3">ایمیل : <a href="mailto:melkonline@info.com">melkonline@info.com</a></h6>
+                        <h6 class="text-gold mt-3">ایمیل : <a target="_blank" href="mailto:melkonline@info.com">melkonline@info.com</a></h6>
                     </div>
                 </div>
             </div>
