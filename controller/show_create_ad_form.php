@@ -6,6 +6,8 @@ $categories = $db->query("SELECT * FROM categories");
 $options    = $db->query("SELECT * FROM options");
 $regions    = $db->query("SELECT * FROM regions WHERE NOT id = 100");
 
+$_SESSION['location'] = "create";
+
 include "view/header.php";
 include "view/navbar.php";
 include "view/create_ad_form.php";

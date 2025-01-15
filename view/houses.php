@@ -1,3 +1,8 @@
+<style>
+    select, option{
+        color: black !important;
+    }
+</style>
 <section class="p-0 bg-dark-gray">
     <div class="container">
         <div class="row py-5">
@@ -8,9 +13,9 @@
             </header>
             <form id="ultimateSearch" class="row mt-3">
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-lg-0 mt-3 ">
-                    <label for="regions" class="text-light" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>منطقه : </label>
+                    <label for="regions" class="text-white" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>منطقه : </label>
                     <div class="w-100 mt-1">
-                        <select name="regions" class="form-select text-light" aria-label="Default select example" id="regions" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                        <select name="regions" class="form-select" aria-label="Default select example" id="regions" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                             <option selected>همه موارد</option>
                             <?php foreach ($regions as $region) : ?>
                                 <?php if (isset($_SESSION['selected-regions'])) : ?>
@@ -29,7 +34,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-lg-0 mt-3">
                     <label for="ad_type" class="text-light">نوع معامله : </label>
                     <div class="w-100 mt-1 ">
-                        <select name="ad_type" id="ad_type" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();' class="form-select text-light" aria-label="Default select example">
+                        <select name="ad_type" id="ad_type" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();' class="form-select" aria-label="Default select example">
                             <option selected>همه موارد</option>
                             <option value="1">خرید</option>
                             <option value="2">رهن / اجاره</option>
@@ -40,7 +45,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-lg-0 mt-3">
                     <label for="metrage" class="text-light" v>متراژ : </label>
                     <div class="w-100 mt-1 ">
-                        <select name="metrage" class="form-select text-light" aria-label="Default select example" id="metrage" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                        <select name="metrage" class="form-select" aria-label="Default select example" id="metrage" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                             <option selected>همه موارد</option>
                             <option value="50">تا 50 متر</option>
                             <option value="100">تا 100 متر </option>
@@ -55,31 +60,10 @@
                         </select>
                     </div>
                 </div>
-                <!--<div class="col-lg-3 col-md-4 col-sm-12 mt-lg-0 mt-3">
-                    <label for="price" class="text-light">قیمت : </label>
-                    <div class="w-100 mt-1 ">
-                        <select onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();' class="form-select text-light" aria-label="Default select example" id="price">
-                        <option selected>همه موارد</option>
-                            <option value="100">تا 100 میلیون</option>
-                            <option value="250">تا 250 میلیون</option>
-                            <option value="500">تا 500 میلیون</option>
-                            <option value="750">تا 750 میلیون</option>
-                            <option value="1">تا 1 میلیارد</option>
-                            <option value="2">تا 2 میلیارد</option>
-                            <option value="3">تا 3 میلیارد</option>
-                            <option value="4">تا 4 میلیارد</option>
-                            <option value="5">تا 5 میلیارد</option>
-                            <option value="6">تا 6 میلیارد</option>
-                            <option value="7">تا 7 میلیارد</option>
-                            <option value="8">تا 8 میلیارد</option>
-                            <option value="9">تا 9 میلیارد</option>
-                        </select>
-                    </div>
-                </div>-->
                 <div class="col-lg-3 col-md-4 col-sm-12 mt-lg-0 mt-3">
                     <label for="category" class="text-light">نوع ملک : </label>
                     <div class="w-100 mt-1 ">
-                        <select name="category" class="form-select text-light" aria-label="Default select example" id="category" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                        <select name="category" class="form-select" aria-label="Default select example" id="category" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                             <option selected>همه موارد</option>
                             <?php foreach ($categories as $category) : ?>
                                 <option value="<?php echo $category['id'] ?>"><?php echo $category['title'] ?></option>
@@ -103,7 +87,7 @@
             <span class="d-flex align-items-center align-self-center">
                 <span class="text-white me-3">مرتب سازی بر اساس :</span>
                 <div class="col-lg-4 col-md-7 col-sm-5">
-                    <select form="ultimateSearch" class="form-select text-light" name="sort" id="sort-filter">
+                    <select form="ultimateSearch" class="form-select" style="width: 210px !important;" width="120px" name="sort" id="sort-filter">
                         <option selected value="newest">به روزترین آگهی</option>
                         <option class="text-dark" value="price_acc">قیمت از کمتر به بیشتر</option>
                         <option class="text-dark" value="price_des">قیمت از بیشتر به کمتر</option>

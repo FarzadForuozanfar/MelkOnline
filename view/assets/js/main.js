@@ -531,20 +531,22 @@ $("#ultimate-search-btn").click(function () {
     let house_container = document.getElementById("house-container");
     let formData = new FormData(form);
     var stat = null;
+
+    let cookies = document.cookie.split(';');
+    if (cookies[0].includes('light')) {
+        var txt = "dark";
+        var mode = "light";
+    }
+    else if (cookies[0].includes('dark')) {
+        var mode = "dark";
+        var txt = "light";
+    }
+
     fetch("searchHouse", {
         method: "POST",
         body: formData
     }).then(response => response.json())
         .then(records => {
-            let cookies = document.cookie.split(';');
-            if (cookies[0].includes('light')) {
-                var txt = "dark";
-                var mode = "light";
-            }
-            else if (cookies[0].includes('dark')) {
-                var mode = "dark";
-                var txt = "light";
-            }
             if (house_container) {
                 house_container.innerHTML = "";
                 stat = true;
@@ -641,27 +643,28 @@ $("#ultimate-search-btn").click(function () {
                 else {
                     container.appendChild(house_container);
                 }
-                console.log(house_container)
+                $("#total-house").html(records['houses'].length);
             }
             else {
-                console.table(records);
                 if (document.getElementById('sort-container')) {
                     document.getElementById('sort-container').style.display = "none";
                 }
                 element = `<section class="p-0 mt-5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 bg-dark-gray text-center rounded-3 p-4">
-                            <h5 class="text-light my-4">مطابق با جستجوی شما در این لحظه موردی یافت نشد.</h5>
-                            <h3 class="text-light my-4">اما</h3>
-                            <h5 class="text-light my-4">از آنجا که <span class="text-gold">هر روز</span> املاک جدیدی به سایت افزوده می شود و ماندگاری املاک در سایت <span class="text-gold">کوتاه مدت</span> می باشد،</h5>
-                            <h5 class="text-light my-4">لطفاً <span class="text-gold">فردا و روزهای دیگر</span> هم به سایت مراجعه کنید.</h5>
+                        <div class="col-12 bg-${mode}-gray text-center rounded-3 p-4 text-${txt}">
+                            <h5 class="my-4">مطابق با جستجوی شما در این لحظه موردی یافت نشد.</h5>
+                            <h3 class="my-4">اما</h3>
+                            <h5 class="my-4">از آنجا که <span class="text-gold">هر روز</span> املاک جدیدی به سایت افزوده می شود و ماندگاری املاک در سایت <span class="text-gold">کوتاه مدت</span> می باشد،</h5>
+                            <h5 class="my-4">لطفاً <span class="text-gold">فردا و روزهای دیگر</span> هم به سایت مراجعه کنید.</h5>
                         </div>
                     </div>
                 </div>
                 </section>`;
                 let div = document.createElement('div');
                 div.innerHTML = element;
+                container.innerHTML = "";
+                $("#total-house").html(0);
                 container.appendChild(div);
             }
         }).catch(error => {
@@ -671,20 +674,20 @@ $("#ultimate-search-btn").click(function () {
             element = `<section class="p-0 mt-5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 bg-dark-gray text-center rounded-3 p-4">
-                            <h5 class="text-light my-4">مطابق با جستجوی شما در این لحظه موردی یافت نشد.</h5>
-                            <h3 class="text-light my-4">اما</h3>
-                            <h5 class="text-light my-4">از آنجا که <span class="text-gold">هر روز</span> املاک جدیدی به سایت افزوده می شود و ماندگاری املاک در سایت <span class="text-gold">کوتاه مدت</span> می باشد،</h5>
-                            <h5 class="text-light my-4">لطفاً <span class="text-gold">فردا و روزهای دیگر</span> هم به سایت مراجعه کنید.</h5>
+                        <div class="col-12 bg-${mode}-gray text-center rounded-3 p-4 text-${txt}">
+                            <h5 class="my-4">مطابق با جستجوی شما در این لحظه موردی یافت نشد.</h5>
+                            <h3 class="my-4">اما</h3>
+                            <h5 class="my-4">از آنجا که <span class="text-gold">هر روز</span> املاک جدیدی به سایت افزوده می شود و ماندگاری املاک در سایت <span class="text-gold">کوتاه مدت</span> می باشد،</h5>
+                            <h5 class="my-4">لطفاً <span class="text-gold">فردا و روزهای دیگر</span> هم به سایت مراجعه کنید.</h5>
                         </div>
                     </div>
                 </div>
                 </section>`;
             let div = document.createElement('div');
             div.innerHTML = element;
+            container.innerHTML = "";
             container.appendChild(div);
-            console.log(error)
+            $("#total-house").html(0);
         })
 
 });
-//action="searchHouse" method="POST" 
